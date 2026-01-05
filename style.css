@@ -1,0 +1,410 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navigation Styles */
+nav {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  text-align: center;
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.btn {
+  background: #ffffff;
+  color: #2575fc;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-3px);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* General Section Styles */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #2575fc;
+}
+/* Step 15: Style the About Section */
+
+/* 1. About content container */
+.about-content {
+  display: flex;           /* Use flexbox */
+  gap: 2rem;               /* Gap between items */
+  flex-wrap: wrap;         /* Allow wrapping for responsiveness */
+  align-items: center;     /* Vertically align items */
+  justify-content: center; /* Optional: center items horizontally */
+  padding: 2rem 0;
+}
+
+/* 2. About image container */
+.about-image {
+  flex: 1 1 250px;         /* Flex property: grow, shrink, basis */
+  text-align: center;       /* Center text inside */
+}
+
+/* 3. Profile picture */
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;                    /* Make it circular */
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient background */
+  display: flex;                         /* Flexbox to center content */
+  align-items: center;                    /* Vertically center emoji */
+  justify-content: center;                /* Horizontally center emoji */
+  font-size: 4rem;                        /* Large emoji */
+  margin: 0 auto;                         /* Center container if needed */
+}
+
+/* 4. About text */
+.about-text {
+  flex: 2 1 300px;      /* Flex property: grow, shrink, basis */
+}
+
+.about-text p {
+  margin-bottom: 1rem;   /* Space between paragraphs */
+  font-size: 1.1rem;     /* Adjust font size */
+  line-height: 1.6;      /* Optional: improve readability */
+}
+/* Step 16: Style the Skills Section */
+
+/* 1. Skills container */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 2rem;  /* Space between skill cards */
+  padding: 2rem 0;
+}
+
+/* 2. Individual skill card */
+.skill-card {
+  background-color: #f5f5f5;  /* Light background */
+  padding: 1.5rem;
+  border-radius: 12px;        /* Rounded corners */
+  text-align: center;         /* Center text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  cursor: pointer;            /* Pointer cursor on hover */
+}
+
+/* 3. Skill card hover effect */
+.skill-card:hover {
+  transform: translateY(-10px); /* Slight lift */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Shadow */
+}
+
+/* 4. Skill card heading */
+.skill-card h3 {
+  color: #ff6f61; /* Colored heading, change as per theme */
+  margin-bottom: 1rem;
+}
+
+/* 5. Skill bar container */
+.skill-bar {
+  background-color: #ddd;     /* Gray background */
+  height: 12px;               /* Bar height */
+  border-radius: 8px;
+  overflow: hidden;           /* Hide overflow */
+  margin-top: 0.5rem;
+}
+
+/* 6. Skill progress inside the bar */
+.skill-progress {
+  height: 100%;
+  width: 0; /* Start at 0, can animate with JS or CSS animation */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient */
+  border-radius: 8px;
+  transition: width 1s ease-in-out; /* Animate width */
+}
+/* Step 17: Style the Projects Section */
+
+/* 1. Projects grid container */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 2rem; /* Gap between project cards */
+  padding: 2rem 0;
+}
+
+/* 2. Individual project card */
+.project-card {
+  background-color: #ffffff; /* White background */
+  border-radius: 12px;       /* Rounded corners */
+  overflow: hidden;          /* Hide overflow for image and content */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  cursor: pointer;
+}
+
+/* 3. Project card hover effect */
+.project-card:hover {
+  transform: translateY(-10px); /* Slight lift */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Project image container */
+.project-image {
+  height: 200px; /* Fixed height */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+  display: flex;   /* Flexbox to center content */
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem; /* Large emoji or icon */
+  color: #fff;     /* White color for emoji/icon */
+}
+
+/* 5. Project info section */
+.project-info {
+  padding: 1rem 1.5rem; /* Inner padding */
+}
+
+.project-info h3 {
+  color: #ff6f61;    /* Colored heading, can adjust to theme */
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: #555;        /* Soft gray for description */
+  line-height: 1.5;
+}
+/* Step 18: Style the Contact Form */
+
+/* 1. Contact form container */
+.contact-form {
+  max-width: 600px;          /* Limit width */
+  margin: 0 auto;            /* Center horizontally */
+  padding: 2rem;             /* Optional: inner padding */
+  background-color: #f9f9f9; /* Optional: light background */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* 2. Form group spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* 3. Form labels */
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333; /* Colored text, adjust to theme */
+}
+
+/* 4. Form inputs and textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;                 /* Full width */
+  padding: 0.75rem 1rem;       /* Inner padding */
+  border: 2px solid #ccc;      /* Default border */
+  border-radius: 8px;          /* Rounded corners */
+  font-size: 1rem;
+  transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+/* 5. Focus state */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;               /* Remove default outline */
+  border-color: #ff6f61;       /* Highlight border on focus */
+}
+
+/* 6. Textarea specifics */
+.contact-form textarea {
+  min-height: 150px;           /* Minimum height */
+  resize: vertical;            /* Allow only vertical resizing */
+}
+
+/* 7. Submit button */
+.submit-btn {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient */
+  color: #fff;                  /* White text */
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 50px;          /* Pill shape */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 8. Submit button hover */
+.submit-btn:hover {
+  transform: scale(1.05);       /* Slightly enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* Step 19: Style the Footer */
+footer {
+  background-color: #111;     /* Dark background */
+  color: #fff;                /* White text */
+  text-align: center;         /* Centered text */
+  padding: 2rem 1rem;         /* Top/bottom padding with some side padding */
+  font-size: 0.9rem;          /* Optional: smaller font for footer */
+}
+
+footer a {
+  color: #ff6f61;             /* Optional: links in footer */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #feb47b;             /* Hover effect for links */
+}
+/* Step 20: Create Animations */
+
+/* 1. Fade in and move up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Apply animation to hero elements */
+.hero-title,
+.hero-subtitle,
+.hero-btn {
+  animation: fadeInUp 1s ease forwards; /* 1s duration, ease, keep final state */
+}
+
+/* Optional: add delay for staggered effect */
+.hero-title {
+  animation-delay: 0.2s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.4s;
+}
+
+.hero-btn {
+  animation-delay: 0.6s;
+}
+/* Step 21: Style the Scroll Indicator */
+.scroll-indicator {
+  position: fixed;                 /* Fixed at top */
+  top: 0;
+  left: 0;
+  height: 4px;                     /* Indicator height */
+  width: 0%;                        /* Initial width */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient */
+  z-index: 9999;                   /* On top of everything */
+  transition: width 0.25s ease-out; /* Smooth width change */
+}
+/* Step 22: Make it Responsive */
+@media (max-width: 768px) {
+  /* 1. Hero section adjustments */
+  .hero-title {
+    font-size: 2rem;   /* Reduce heading size */
+  }
+  .hero-subtitle {
+    font-size: 1rem;   /* Reduce subtitle size */
+  }
+
+  /* 2. Navigation adjustments */
+  nav ul {
+    flex-wrap: wrap;   /* Allow nav items to wrap */
+    justify-content: center;
+  }
+
+  /* 3. About section stacking */
+  .about-content {
+    flex-direction: column;  /* Stack image and text vertically */
+    align-items: center;     /* Center content horizontally */
+    gap: 1.5rem;             /* Adjust gap */
+  }
+
+  .about-text,
+  .about-image {
+    flex: unset;             /* Remove flex sizing for vertical layout */
+    width: 100%;             /* Full width */
+    text-align: center;      /* Center text */
+  }
+}
