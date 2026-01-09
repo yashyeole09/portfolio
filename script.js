@@ -1,43 +1,39 @@
-// ===== Dark Mode =====
 const themeToggle = document.querySelector('.theme-toggle');
-
-function setTheme(dark) {
-  document.body.classList.toggle('dark', dark);
-  localStorage.setItem('darkMode', dark);
+function setTheme(isDark) {
+  document.body.classList.toggle('dark', isDark);
+  localStorage.setItem('darkMode', isDark);
 }
 
-const savedTheme = localStorage.getItem('darkMode');
-if (savedTheme === null || savedTheme === 'true') setTheme(true);
-
+setTheme(localStorage.getItem('darkMode') !== 'false');
 themeToggle.addEventListener('click', () => {
   setTheme(!document.body.classList.contains('dark'));
 });
 
-// ===== Contact Form (Frontend Only) =====
 const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', function (e) {
+contactForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+  const name = contactForm.querySelector('#name').value.trim();
+  const email = contactForm.querySelector('#email').value.trim();
+  const message = contactForm.querySelector('#message').value.trim();
 
   if (!name || !email || !message) {
-    alert("Please fill all the fields.");
+    alert('Please fill all the fields.');
     return;
   }
 
-  const subject = encodeURIComponent(`Portfolio Message from ${name}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  const mailtoLink =
+    `mailto:yashyeole2121@gmail.com` +
+    `?subject=${encodeURIComponent(`Portfolio Message from ${name}`)}` +
+    `&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+
+  window.location.href = mailtoLink;
+
+  alert(
+    "Thank you for reaching out! 😊\n" +
+    "I’ve received your message and will get back to you shortly."
   );
-
-  // MAILTO
-  window.location.href = `mailto:yashyeole2121@gmail.com?subject=${subject}&body=${body}`;
-
-  // POLITE ALERT
-  alert("Thank you for reaching out! 😊\nI’ve received your message and will get back to you shortly.");
-
   contactForm.reset();
 });

@@ -1,113 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yash Yeole | Frontend Developer</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Yeole | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="dark">
+  <header class="navbar">
+    <nav class="nav-container">
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <nav class="nav-container">
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <div class="nav-actions">
+        <a href="resume.pdf" class="resume-link">
+          <i class="fa-regular fa-file"></i> Resume
+        </a>
+        <button class="theme-toggle">
+          <i id="themeIcon" class="fa-regular fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>HI I'am Yash Yeole</h1>
+      <span class="hero-tag">Frontend Developer</span>
+      <h1>Crafting clean & modern web experiences</h1>
+      <div class="hero-actions">
+        <a href="#contact" class="primary-btn">Contact Me</a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/yashyeole09"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yashyeole09"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wa.me/7350065856"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:yashyeole2121@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://peerlist.io/yashyeole09"><i class="fa-brands fa-product-hunt"></i></a>
+      </div>
     </div>
+  </section>
 
-    <div class="nav-actions">
-      <a href="resume.pdf" class="resume-link">
-        <i class="fa-regular fa-file"></i> Resume
-      </a>
-      <button class="theme-toggle">
-        <i id="themeIcon" class="fa-regular fa-moon"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h1>HI I'am Yash Yeole</h1>
-    <span class="hero-tag">Frontend Developer</span>
-    <h1>Crafting clean & modern web experiences</h1>
-
-    <div class="hero-actions">
-      <a href="#contact" class="primary-btn">Contact Me</a>
-    </div>
-
-    <div class="hero-socials">
-      <a href="https://github.com/yashyeole09"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/yashyeole09"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://wa.me/73350065856"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="mailto:yashyeole2121@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-      <a href="https://peerlist.io/yashyeole09"><i class="fa-brands fa-product-hunt"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
+  <section id="about" class="section">
   <h2>About Me</h2>
   <div class="about-box">
-    <p>I’m a frontend developer focused on building polished, user-friendly web interfaces.</p><br>
-    <p>I build responsive, accessible, and visually refined interfaces using HTML, CSS, JavaScript and React.</p><br>
-    <p>Excited to make more web pages with a modern & responsive look.</p>
+    <p>Hello! Im a frontend developer passionate about creating clean, responsive, and user-friendly web interfaces that people love to use.</p><br>
+
+    <p><strong>Technologies I work with:</strong> HTML5, CSS3, JavaScript, React</p><br>
+
+    <p>I ve built multiple responsive websites and projects, focusing on accessibility, visual hierarchy, and smooth user experience.</p><br>
+
+    <p>My goal is to craft modern web applications that are both functional and visually appealing, while constantly learning new frontend techniques.</p><br>
+
+    <p>When I am not coding, I enjoy exploring UI design concepts and keeping up with the latest web trends. </p> <br>
+
+    <p> Recently i have started Reading Articles about Development Online for gaining more knowledge.</p> <br> 
+
+    <p>Feel free to explore my portfolio and reach out if you d like to collaborate or have any questions!</p>
+
+
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section alt">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
-    <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-    <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-    <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
+
+  <section id="skills" class="section alt">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+      <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+      <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+      <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
+      <div class="skill-card"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+      <div class="skill-card"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+      <div class="skill-card"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+      <div class="skill-card"><i class="fa-brands fa-square-tailwindcss"></i><span>Tailwind CSS</span></div>
+      <div class="skill-card"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+      <div class="skill-card"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p style="text-align:center; margin-top:-1.5rem; margin-bottom:3rem; color:#6b7280; font-size:0.95rem;">
+      Click on a project to view the live demo
+    </p>
+
+    <div class="projects-grid">
+
+      <a href="https://tic-tac-toe-ashy-phi-31.vercel.app" class="project-card" target="_blank">
+        <h3>Tic Tac Toe Game</h3>
+        <p>Tic Tac Toe Game using JavaScript.</p>
+      </a>
+
+      <a href="https://to-do-app-six-rust.vercel.app" class="project-card" target="_blank">
+        <h3>To-Do App</h3>
+        <p>Task management app with local storage.</p>
+      </a>
+
+      <a href="https://icp-9-g2-react-project.vercel.app" class="project-card" target="_blank">
+        <h3>Pet Connection </h3>
+        <p>Pet adoption platform (a group project)</p>
+      </a>
+
+      <a href="#" class="project-card" target="_blank">
+        <h3>Portfolio Website</h3>
+        <p>Modern personal portfolio .</p>
+      </a>
+
+      <a href="https://the-book-shop-iota.vercel.app" class="project-card" target="_blank">
+        <h3>Book Shop</h3>
+        <p>Online book store with search and filter features.</p>
+      </a>
+
+      <a href="https://dairy-cloud.vercel.app" class="project-card" target="_blank">
+        <h3>Dairy Cloud</h3>
+        <p>Online dairy store with search and filter features.</p>
+      </a>
+
+
+    </div>
+  </section>
+
+
+  <section id="contact" class="section alt">
+    <h2>Contact</h2>
+    <form class="contact-form" id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <textarea id="message" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+<footer class="site-footer">
+  <p>
+    © 2026  <span class="footer-name">Yash Yeole</span> ||  Portfolio Website
+  </p>
+
+  <div class="footer-socials">
+    <a href="https://github.com/yashyeole09" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/yashyeole09" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="mailto:yashyeole2121@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
   </div>
-</section>
+</footer>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <a href="#" class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>Modern personal portfolio with dark mode.</p>
-    </a>
-    <a href="#" class="project-card">
-      <h3>To-Do App</h3>
-      <p>Task management app with local storage.</p>
-    </a>
-    <a href="#" class="project-card">
-      <h3>UI Design Project</h3>
-      <p>Focused on layout & visual hierarchy.</p>
-    </a>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="section alt">
-  <h2>Contact</h2>
-  <form class="contact-form" id="contactForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Email Address" required>
-    <textarea id="message" placeholder="Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer>© 2025 Yash Yeole</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
