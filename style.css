@@ -60,7 +60,7 @@ body.dark .nav-links a:hover {
 
 .nav-actions a,
 .nav-actions button {
-  padding: 6px 14px;
+  padding: 8px 16px;
   font-size: 14px;
   height: 36px;
   display: flex;
@@ -92,7 +92,7 @@ body.dark .nav-links a:hover {
 
 .hero-tag {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 6px 16px;
   border-radius: 999px;
   margin-bottom: 16px;
   font-size: 14px;
@@ -207,6 +207,7 @@ body.dark .about-box {
   border-radius: 12px;
   text-align: center;
   border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 body.dark .skill-card {
@@ -222,11 +223,12 @@ body.dark .skill-card {
 
 .project-card {
   background: #ffffff;
-  padding: 32px;
+  padding: 28px;
   border-radius: 14px;
   border: 1px solid #e5e7eb;
   text-decoration: none;
   color: #111827;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: 0.2s ease;
 }
 
@@ -288,9 +290,7 @@ body.dark button {
   border-top: 1px solid #e5e7eb;
 }
 
-body.dark .site-footer {
-  border-color: #1f2937;
-}
+body.dark .site-footer { border-color: #1f2937; }
 
 .site-footer p {
   color: #6b7280;
@@ -298,18 +298,14 @@ body.dark .site-footer {
   margin-bottom: 16px;
 }
 
-body.dark .site-footer p {
-  color: #9ca3af;
-}
+body.dark .site-footer p { color: #9ca3af; }
 
 .footer-name {
   font-weight: 600;
   color: #111827;
 }
 
-body.dark .footer-name {
-  color: #e5e7eb;
-}
+body.dark .footer-name { color: #e5e7eb; }
 
 .footer-socials {
   display: flex;
@@ -336,7 +332,7 @@ body.dark .footer-socials a:hover {
   color: #60a5fa;
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
   .nav-container {
     flex-direction: column;
     align-items: center;
@@ -352,77 +348,29 @@ body.dark .footer-socials a:hover {
 
   .nav-actions a,
   .nav-actions button {
-    padding: 6px 10px;
-    font-size: 12px;
-    height: 28px;
+    padding: 10px 14px;
+    font-size: 13px;
+    height: 34px;
   }
 
   .hero {
     padding: 40px 16px;
-    margin: 10px;
-    text-align: center;
   }
 
-  .hero h1 {
-    font-size: 26px;
-    line-height: 32px;
-  }
+  .hero h1 { font-size: 28px; line-height: 34px; }
+  .hero p, .hero-tag { font-size: 13px; line-height: 18px; }
+  .hero-tag { padding: 6px 14px; }
+  .primary-btn { padding: 10px 24px; font-size: 14px; }
 
-  .hero p,
-  .hero-tag {
-    font-size: 12px;
-    line-height: 16px;
-  }
+  .hero-socials { gap: 14px; flex-wrap: wrap; }
+  .skills-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; }
+  .projects-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+  .project-card { padding: 20px; border-radius: 12px; }
 
-  .primary-btn {
-    padding: 8px 20px;
-    font-size: 13px;
-  }
+  .contact-form { max-width: 100%; gap: 10px; padding: 0 8px; }
+  input, textarea { padding: 12px; font-size: 14px; }
+  button { padding: 12px; font-size: 14px; }
 
-  .hero-socials {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 12px;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 16px;
-  }
-
-  .project-card {
-    padding: 16px;
-    border-radius: 12px;
-  }
-
-  .contact-form {
-    max-width: 100%;
-    gap: 10px;
-    padding: 0 8px;
-  }
-
-  input,
-  textarea {
-    padding: 10px;
-    font-size: 13px;
-  }
-
-  button {
-    padding: 10px;
-    font-size: 13px;
-  }
-
-  .site-footer {
-    padding: 24px 12px;
-    font-size: 12px;
-  }
-
-  .footer-socials {
-    gap: 12px;
-  }
+  .site-footer { padding: 24px 12px; font-size: 13px; }
+  .footer-socials { gap: 12px; }
 }
-
