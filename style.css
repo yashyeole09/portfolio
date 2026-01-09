@@ -1,410 +1,241 @@
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* LIGHT MODE */
+:root {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --accent: #0ea5e9;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+/* DARK MODE */
+body.dark {
+  --bg: #0b1220;
+  --surface: #111827;
+  --border: #1f2937;
+  --primary: #60a5fa;
+  --accent: #22d3ee;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* Navigation Styles */
-nav {
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  padding: 16px 40px;
-  position: sticky;
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
   top: 0;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-nav ul {
-  list-style: none;
+body.dark .navbar {
+  background: rgba(11,18,32,0.8);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  justify-content: space-between;
 }
 
-nav a {
-  color: #ffffff;
+.nav-links a {
+  margin-right: 1.5rem;
   text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: var(--text);
+  font-weight: 500;
 }
 
-nav a:hover {
-  transform: translateY(-3px);
-  opacity: 0.9;
+.nav-links a:hover {
+  color: var(--primary);
 }
-/* Hero Section Styles */
-.hero {
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  color: #ffffff;
-  text-align: center;
-  padding: 120px 20px;
+
+.nav-actions {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 1rem;
+}
+
+.resume-link {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* HERO */
+.hero {
+  min-height: 90vh;
+  padding-top: 140px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
-  animation: fadeIn 1s ease forwards;
+  max-width: 700px;
+  margin: 1rem auto;
 }
 
 .hero p {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 0.3s;
+  color: var(--muted);
+  max-width: 600px;
+  margin: auto;
 }
 
-.btn {
-  background: #ffffff;
-  color: #2575fc;
-  padding: 12px 30px;
-  border-radius: 30px;
+.primary-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 0.6s;
 }
 
-.btn:hover {
-  background: #f1f5f9;
-  transform: translateY(-3px);
+.hero-socials {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero-socials a {
+  color: var(--muted);
+  font-size: 1.3rem;
 }
-/* General Section Styles */
-section {
-  padding: 80px 20px;
+
+.hero-socials a:hover {
+  color: var(--primary);
+}
+
+/* SECTIONS */
+.section {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 5rem 2rem;
 }
 
-section h2 {
+.section.alt {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #2575fc;
-}
-/* Step 15: Style the About Section */
-
-/* 1. About content container */
-.about-content {
-  display: flex;           /* Use flexbox */
-  gap: 2rem;               /* Gap between items */
-  flex-wrap: wrap;         /* Allow wrapping for responsiveness */
-  align-items: center;     /* Vertically align items */
-  justify-content: center; /* Optional: center items horizontally */
-  padding: 2rem 0;
+  margin-bottom: 3rem;
 }
 
-/* 2. About image container */
-.about-image {
-  flex: 1 1 250px;         /* Flex property: grow, shrink, basis */
-  text-align: center;       /* Center text inside */
+/* ABOUT */
+.about-box {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  color: var(--muted);
 }
 
-/* 3. Profile picture */
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;                    /* Make it circular */
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient background */
-  display: flex;                         /* Flexbox to center content */
-  align-items: center;                    /* Vertically center emoji */
-  justify-content: center;                /* Horizontally center emoji */
-  font-size: 4rem;                        /* Large emoji */
-  margin: 0 auto;                         /* Center container if needed */
-}
-
-/* 4. About text */
-.about-text {
-  flex: 2 1 300px;      /* Flex property: grow, shrink, basis */
-}
-
-.about-text p {
-  margin-bottom: 1rem;   /* Space between paragraphs */
-  font-size: 1.1rem;     /* Adjust font size */
-  line-height: 1.6;      /* Optional: improve readability */
-}
-/* Step 16: Style the Skills Section */
-
-/* 1. Skills container */
-.skills-container {
+/* SKILLS */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 2rem;  /* Space between skill cards */
-  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1.5rem;
 }
 
-/* 2. Individual skill card */
 .skill-card {
-  background-color: #f5f5f5;  /* Light background */
+  background: var(--surface);
   padding: 1.5rem;
-  border-radius: 12px;        /* Rounded corners */
-  text-align: center;         /* Center text */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  cursor: pointer;            /* Pointer cursor on hover */
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--border);
 }
 
-/* 3. Skill card hover effect */
-.skill-card:hover {
-  transform: translateY(-10px); /* Slight lift */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Shadow */
-}
-
-/* 4. Skill card heading */
-.skill-card h3 {
-  color: #ff6f61; /* Colored heading, change as per theme */
-  margin-bottom: 1rem;
-}
-
-/* 5. Skill bar container */
-.skill-bar {
-  background-color: #ddd;     /* Gray background */
-  height: 12px;               /* Bar height */
-  border-radius: 8px;
-  overflow: hidden;           /* Hide overflow */
-  margin-top: 0.5rem;
-}
-
-/* 6. Skill progress inside the bar */
-.skill-progress {
-  height: 100%;
-  width: 0; /* Start at 0, can animate with JS or CSS animation */
-  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient */
-  border-radius: 8px;
-  transition: width 1s ease-in-out; /* Animate width */
-}
-/* Step 17: Style the Projects Section */
-
-/* 1. Projects grid container */
+/* PROJECTS */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 2rem; /* Gap between project cards */
-  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 2rem;
 }
 
-/* 2. Individual project card */
 .project-card {
-  background-color: #ffffff; /* White background */
-  border-radius: 12px;       /* Rounded corners */
-  overflow: hidden;          /* Hide overflow for image and content */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  cursor: pointer;
-}
-
-/* 3. Project card hover effect */
-.project-card:hover {
-  transform: translateY(-10px); /* Slight lift */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* 4. Project image container */
-.project-image {
-  height: 200px; /* Fixed height */
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
-  display: flex;   /* Flexbox to center content */
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem; /* Large emoji or icon */
-  color: #fff;     /* White color for emoji/icon */
-}
-
-/* 5. Project info section */
-.project-info {
-  padding: 1rem 1.5rem; /* Inner padding */
-}
-
-.project-info h3 {
-  color: #ff6f61;    /* Colored heading, can adjust to theme */
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.project-info p {
-  font-size: 1rem;
-  color: #555;        /* Soft gray for description */
-  line-height: 1.5;
-}
-/* Step 18: Style the Contact Form */
-
-/* 1. Contact form container */
-.contact-form {
-  max-width: 600px;          /* Limit width */
-  margin: 0 auto;            /* Center horizontally */
-  padding: 2rem;             /* Optional: inner padding */
-  background-color: #f9f9f9; /* Optional: light background */
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-}
-
-/* 2. Form group spacing */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-/* 3. Form labels */
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #333; /* Colored text, adjust to theme */
-}
-
-/* 4. Form inputs and textarea */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;                 /* Full width */
-  padding: 0.75rem 1rem;       /* Inner padding */
-  border: 2px solid #ccc;      /* Default border */
-  border-radius: 8px;          /* Rounded corners */
-  font-size: 1rem;
-  transition: border-color 0.3s ease; /* Smooth transition */
-}
-
-/* 5. Focus state */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;               /* Remove default outline */
-  border-color: #ff6f61;       /* Highlight border on focus */
-}
-
-/* 6. Textarea specifics */
-.contact-form textarea {
-  min-height: 150px;           /* Minimum height */
-  resize: vertical;            /* Allow only vertical resizing */
-}
-
-/* 7. Submit button */
-.submit-btn {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient */
-  color: #fff;                  /* White text */
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 50px;          /* Pill shape */
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 8. Submit button hover */
-.submit-btn:hover {
-  transform: scale(1.05);       /* Slightly enlarge on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-/* Step 19: Style the Footer */
-footer {
-  background-color: #111;     /* Dark background */
-  color: #fff;                /* White text */
-  text-align: center;         /* Centered text */
-  padding: 2rem 1rem;         /* Top/bottom padding with some side padding */
-  font-size: 0.9rem;          /* Optional: smaller font for footer */
-}
-
-footer a {
-  color: #ff6f61;             /* Optional: links in footer */
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: var(--text);
 }
 
-footer a:hover {
-  color: #feb47b;             /* Hover effect for links */
-}
-/* Step 20: Create Animations */
-
-/* 1. Fade in and move up animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.project-card:hover {
+  border-color: var(--primary);
 }
 
-/* 2. Apply animation to hero elements */
-.hero-title,
-.hero-subtitle,
-.hero-btn {
-  animation: fadeInUp 1s ease forwards; /* 1s duration, ease, keep final state */
+/* CONTACT */
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Optional: add delay for staggered effect */
-.hero-title {
-  animation-delay: 0.2s;
+input, textarea {
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
 }
 
-.hero-subtitle {
-  animation-delay: 0.4s;
+button {
+  padding: 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.hero-btn {
-  animation-delay: 0.6s;
-}
-/* Step 21: Style the Scroll Indicator */
-.scroll-indicator {
-  position: fixed;                 /* Fixed at top */
-  top: 0;
-  left: 0;
-  height: 4px;                     /* Indicator height */
-  width: 0%;                        /* Initial width */
-  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient */
-  z-index: 9999;                   /* On top of everything */
-  transition: width 0.25s ease-out; /* Smooth width change */
-}
-/* Step 22: Make it Responsive */
-@media (max-width: 768px) {
-  /* 1. Hero section adjustments */
-  .hero-title {
-    font-size: 2rem;   /* Reduce heading size */
-  }
-  .hero-subtitle {
-    font-size: 1rem;   /* Reduce subtitle size */
-  }
-
-  /* 2. Navigation adjustments */
-  nav ul {
-    flex-wrap: wrap;   /* Allow nav items to wrap */
-    justify-content: center;
-  }
-
-  /* 3. About section stacking */
-  .about-content {
-    flex-direction: column;  /* Stack image and text vertically */
-    align-items: center;     /* Center content horizontally */
-    gap: 1.5rem;             /* Adjust gap */
-  }
-
-  .about-text,
-  .about-image {
-    flex: unset;             /* Remove flex sizing for vertical layout */
-    width: 100%;             /* Full width */
-    text-align: center;      /* Center text */
-  }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
 }

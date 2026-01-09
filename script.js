@@ -1,89 +1,43 @@
-// script.js
+// ===== Dark Mode =====
+const themeToggle = document.querySelector('.theme-toggle');
 
-/* --- Smooth Scrolling for Nav Links --- */
-const navLinks = document.querySelectorAll('.nav-link');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-/* --- Scroll Progress Indicator --- */
-const scrollIndicator = document.getElementById('scroll-indicator');
-
-/* --- Animate Skill Bars on Scroll --- */
-const skillCards = document.querySelectorAll('.skill-card');
-
-function animateSkills() {
-  skillCards.forEach(card => {
-    const rect = card.getBoundingClientRect();  // Position relative to viewport
-    const progress = card.querySelector('.skill-progress');
-    const skillLevel = card.getAttribute('data-skill'); // e.g., "80" or "4/5"
-
-    if (!progress || !skillLevel) return;
-
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      // Convert rating to percentage if given out of 5 or 10
-      let percentage = skillLevel;
-      if (skillLevel.includes('/')) {
-        const [score, max] = skillLevel.split('/').map(Number);
-        percentage = (score / max) * 100;
-      }
-      progress.style.width = percentage + "%"; // Animate the bar
-    }
-  });
+function setTheme(dark) {
+  document.body.classList.toggle('dark', dark);
+  localStorage.setItem('darkMode', dark);
 }
 
-/* --- Combined Scroll Event --- */
-window.addEventListener('scroll', () => {
-  // Scroll Indicator
-  if (scrollIndicator) {
-    const scrollTop = document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-    scrollIndicator.style.width = scrollPercent + "%";
+const savedTheme = localStorage.getItem('darkMode');
+if (savedTheme === null || savedTheme === 'true') setTheme(true);
+
+themeToggle.addEventListener('click', () => {
+  setTheme(!document.body.classList.contains('dark'));
+});
+
+// ===== Contact Form (Frontend Only) =====
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill all the fields.");
+    return;
   }
 
-  // Animate skill bars
-  animateSkills();
+  const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  );
+
+  // MAILTO
+  window.location.href = `mailto:yashyeole2121@gmail.com?subject=${subject}&body=${body}`;
+
+  // POLITE ALERT
+  alert("Thank you for reaching out! 😊\nI’ve received your message and will get back to you shortly.");
+
+  contactForm.reset();
 });
-
-// Run once on page load
-animateSkills();
-
-/* --- Handle Contact Form Submission --- */
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent page reload
-
-    // Get form values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    // Simple validation (optional)
-    if (!name || !email || !message) {
-      alert("Please fill in all fields before submitting.");
-      return;
-    }
-
-    // Show thank you message
-    alert(`Thank you, ${name}! Your message has been received.\nWe will get back to you at ${email}.`);
-
-    // Reset the form
-    contactForm.reset();
-  });
-}

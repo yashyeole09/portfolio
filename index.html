@@ -1,158 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal-Portfolio</title>
-    <link rel="stylesheet" href="style.css">   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yash Yeole | Frontend Developer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="scroll-indicator" id="scrollIndicator"></div>
-    <nav>
-  <ul>
-    <li><a href="#home" class="nav-link">Home</a></li>
-    <li><a href="#about" class="nav-link">About</a></li>
-    <li><a href="#skills" class="nav-link">Skills</a></li>
-    <li><a href="#projects" class="nav-link">Projects</a></li>
-    <li><a href="#contact" class="nav-link">Contact</a></li>
-  </ul>
-</nav>
+
+<body class="dark">
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <nav class="nav-container">
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="resume.pdf" class="resume-link">
+        <i class="fa-regular fa-file"></i> Resume
+      </a>
+      <button class="theme-toggle">
+        <i id="themeIcon" class="fa-regular fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
 <section id="home" class="hero">
-  <h1>Welcome to My Portfolio</h1>
-  <p>
-    Hi, I’m Yash Yeole, a frontend developer passionate about building clean and
-    interactive web experiences.
-  </p>
-  <a href="#contact" class="btn">Contact Me</a>
+  <div class="hero-content">
+    <h1>HI I'am Yash Yeole</h1>
+    <span class="hero-tag">Frontend Developer</span>
+    <h1>Crafting clean & modern web experiences</h1>
+
+    <div class="hero-actions">
+      <a href="#contact" class="primary-btn">Contact Me</a>
+    </div>
+
+    <div class="hero-socials">
+      <a href="https://github.com/yashyeole09"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/yashyeole09"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://wa.me/73350065856"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="mailto:yashyeole2121@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      <a href="https://peerlist.io/yashyeole09"><i class="fa-brands fa-product-hunt"></i></a>
+    </div>
+  </div>
 </section>
-<section id="about">
+
+<!-- ABOUT -->
+<section id="about" class="section">
   <h2>About Me</h2>
-
-  <div class="about-content">
-    <div class="about-image">
-      <div class="profile-pic">👨‍💻</div>
-    </div>
-
-    <div class="about-text">
-      <p>
-        I am a frontend developer who enjoys building clean, responsive, and
-        user-friendly web interfaces.
-      </p>
-      <p>
-        I work mainly with HTML, CSS, JavaScript, and React, and I enjoy turning
-        ideas into real web projects.
-      </p>
-      <p>
-        I am continuously learning new technologies and improving my skills to
-        become a better web developer.
-      </p>
-    </div>
+  <div class="about-box">
+    <p>I’m a frontend developer focused on building polished, user-friendly web interfaces.</p><br>
+    <p>I build responsive, accessible, and visually refined interfaces using HTML, CSS, JavaScript and React.</p><br>
+    <p>Excited to make more web pages with a modern & responsive look.</p>
   </div>
 </section>
-<section id="skills">
-  <h2>My Skills</h2>
 
-  <div class="skills-container">
-    <!-- Skill 1 -->
-    <div class="skill-card" data-skill="90">
-      <h3>HTML5</h3>
-      <p>
-        Strong understanding of semantic HTML and proper page structure.
-      </p>
-      <div class="skill-bar">
-        <div class="skill-progress" style="width: 0%;"></div>
-      </div>
-    </div>
-
-    <!-- Skill 2 -->
-    <div class="skill-card" data-skill="85">
-      <h3>CSS3</h3>
-      <p>
-        Experienced in responsive design, layouts, and modern styling.
-      </p>
-      <div class="skill-bar">
-        <div class="skill-progress" style="width: 0%;"></div>
-      </div>
-    </div>
-
-    <!-- Skill 3 -->
-    <div class="skill-card" data-skill="80">
-      <h3>JavaScript</h3>
-      <p>
-        Good knowledge of DOM manipulation and basic JavaScript APIs.
-      </p>
-      <div class="skill-bar">
-        <div class="skill-progress" style="width: 0%;"></div>
-      </div>
-    </div>
+<!-- SKILLS -->
+<section id="skills" class="section alt">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+    <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+    <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+    <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
   </div>
 </section>
-<section id="projects">
-  <h2>My Projects</h2>
 
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
   <div class="projects-grid">
-    <!-- Project 1 -->
-    <div class="project-card">
-      <div class="project-image">🌐</div>
-      <div class="project-info">
-        <h3>Portfolio Website</h3>
-        <p>
-          A personal portfolio website built using HTML, CSS, and JavaScript to
-          showcase my skills and projects.
-        </p>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <div class="project-image">📱</div>
-      <div class="project-info">
-        <h3>To-Do Web App</h3>
-        <p>
-          A responsive to-do application with task management and local storage
-          support.
-        </p>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <div class="project-image">🎨</div>
-      <div class="project-info">
-        <h3>UI Design Project</h3>
-        <p>
-          A creative UI design project focusing on clean layouts and user
-          experience.
-        </p>
-      </div>
-    </div>
+    <a href="#" class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Modern personal portfolio with dark mode.</p>
+    </a>
+    <a href="#" class="project-card">
+      <h3>To-Do App</h3>
+      <p>Task management app with local storage.</p>
+    </a>
+    <a href="#" class="project-card">
+      <h3>UI Design Project</h3>
+      <p>Focused on layout & visual hierarchy.</p>
+    </a>
   </div>
 </section>
-<section id="contact">
-  <h2>Get In Touch</h2>
 
+<!-- CONTACT -->
+<section id="contact" class="section alt">
+  <h2>Contact</h2>
   <form class="contact-form" id="contactForm">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" required />
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" required />
-    </div>
-
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" required></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">Send Message</button>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <textarea id="message" placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
 </section>
-<footer>
-  <p>© 2025 Yash Yeole. All rights reserved.</p>
-</footer>
+
+<footer>© 2025 Yash Yeole</footer>
 
 <script src="script.js"></script>
 </body>
